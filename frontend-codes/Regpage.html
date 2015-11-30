@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet">
+	<link href="css/coverpage.css" rel="stylesheet">
 
     
   </head>
@@ -49,42 +50,26 @@
             </p>
           </div> -->
 		  <div class="jumbotron">
-			<h2>Welcome to Login Page</h2>
-			<br>
-				<table align="center">
-				<form ng-app="myApp" align="center" ng-controller="validateCtrl" 
-				name="myForm" novalidate>
+			<div> <h2> Registraion page</h2></div><br>
+			<div class="form">
+				<p class="contact"><label for="name">Name</label>
+				<input id="name" name="name" placeholder="enter your name" required="" type="text" tabindex="1">
+				</p>
+				<p class="contact"><label for="email">E-mail</label>
+				<input id="email" name="email" placeholder="enter your email address" required="" type="email">
+				</p>
+				<p class="contact"><label for="username">Username</label>
+				<input id="username" name="username" placeholder="enter your username" required="" type="text" tabindex="2">
+				</p>
+				<p class="contact"><label for="password">Create a password</label>
+				<input type="password" id="password" name="password" required="">
+				</p>
+				<p class="contact"><label for="repassword">Confirm your password</label>
+				<input type="password" id="repassword" name="repassword" required="">
+				</p>
+				<input class="buttom" name="submit" id="submit" tabindex="5" value="Sign me up!" type="submit">
 
-				<tr><td><p>Email:</p></td>
-				<td><p><input type="email" name="email" placeholder="Email address" ng-model="email" required>
-				<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
-				<span ng-show="myForm.email.$error.required">Email is required.</span>
-				<span ng-show="myForm.email.$error.email">Invalid email address.</span>
-				</span>
-				</p></td></tr>
-				
-				<tr><td><p>Password:</p></td>
-				<td><p><input type="password" name="password" placeholder="Password" ng-model="password" required />
-				<span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
-				<span ng-show="myForm.password.$error.required">Password is required.</span>
-				<span ng-show="myForm.password.$error.password">Invalid password.</span>
-				</p></td></tr>
-				
-				<tr><td><label><p><input type="checkbox" value="remember-me"> Remember me</p></label></td></tr>
-				<tr><td><p>
-				<input type="submit"
-				ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
-				myForm.email.$dirty && myForm.email.$invalid">
-				</p></td></tr>
-				</form>
-				</table>
-				<script>
-				var app = angular.module('myApp', []);
-				app.controller('validateCtrl', function($scope) {
-					$scope.email = 'sukeshtedla@gmail.com';
-					$scope.password = 'sukeshraghav';
-				});
-				</script>
+			</div>
 				
 		  </div>
 
