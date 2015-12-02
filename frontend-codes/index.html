@@ -55,7 +55,7 @@
 				<form ng-app="myApp" align="center" ng-controller="validateCtrl" 
 				name="myForm" novalidate>
 
-				<tr><td><p>Email:</p></td>
+				<tr><td align="left"><p>Email:</p></td>
 				<td><p><input type="email" name="email" placeholder="Email address" ng-model="email" required>
 				<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
 				<span ng-show="myForm.email.$error.required">Email is required.</span>
@@ -63,28 +63,42 @@
 				</span>
 				</p></td></tr>
 				
-				<tr><td><p>Password:</p></td>
+				<tr><td><br></td></tr>
+				
+				<tr><td align="left"><p>Password:</p></td>
 				<td><p><input type="password" name="password" placeholder="Password" ng-model="password" required />
 				<span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
 				<span ng-show="myForm.password.$error.required">Password is required.</span>
 				<span ng-show="myForm.password.$error.password">Invalid password.</span>
 				</p></td></tr>
 				
-				<tr><td><label><p><input type="checkbox" value="remember-me"> Remember me</p></label></td></tr>
-				<tr><td><p>
+				<tr><td><br></td></tr>
+				
+				<tr><td align="left"><p>Designation:</p></td>
+				<td  align="left"><p><select name="Select" ng-model="data.Select">
+						<option value="option-1">Site Manager</option>
+						<option value="option-2">Line Manager</option>
+						<option value="option-3">Employee</option>
+						</select><br></p></td></tr>
+										
+				<tr><td><br></td></tr>
+				
+				<tr><td><a href="Regpage.html"><p><u>Register Here</u></p></a></td>
+				<td><p>
 				<input type="submit"
 				ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
 				myForm.email.$dirty && myForm.email.$invalid">
 				</p></td></tr>
 				</form>
-				</table>
 				<script>
 				var app = angular.module('myApp', []);
 				app.controller('validateCtrl', function($scope) {
 					$scope.email = 'sukeshtedla@gmail.com';
 					$scope.password = 'sukeshraghav';
+					$scope.Select = ;
 				});
 				</script>
+				</table>
 				
 		  </div>
 
