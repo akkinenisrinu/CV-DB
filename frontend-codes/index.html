@@ -53,7 +53,7 @@
 			<br>
 				<table align="center">
 				<form ng-app="myApp" align="center" ng-controller="validateCtrl" 
-				name="myForm" novalidate>
+				name="myForm" novalidate action="userpage.html">
 
 				<tr><td align="left"><p>Email:</p></td>
 				<td><p><input type="email" name="email" placeholder="Email address" ng-model="email" required>
@@ -90,6 +90,9 @@
 				myForm.email.$dirty && myForm.email.$invalid">
 				</p></td></tr>
 				</form>
+				</table>
+				
+		</div>
 				<script>
 				var app = angular.module('myApp', []);
 				app.controller('validateCtrl', function($scope) {
@@ -98,9 +101,8 @@
 					$scope.Select = ;
 				});
 				</script>
-				</table>
 				
-		  </div>
+		  
 
 
           <div class="mastfoot">
