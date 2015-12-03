@@ -55,23 +55,23 @@
         <table align="center">
           <form ng-app="myApp" align="center" ng-controller="validateCtrl"
                 name="myForm" novalidate>
-            <tr><td align="left"><p>Username</p></td>
-              <td align="right"><p><input id="name" name="name" placeholder="enter your name" required="" ng-model="formInfo.Name" tabindex="2" required>
+            <tr><td align="left" width="40%"><p>Username:</p></td>
+              <td align="right"><p><input id="name" name="name" placeholder="enter your name" required="" ng-model="formInfo.Name"  required>
               </p></td></tr>
 
-            <tr><td align="left"><p>Email</p></td>
+            <tr><td align="left" width="30%"><p>Email:</p></td>
               <td align="right"><p><input id="username" name="username" placeholder="enter your username" ng-model="form.Info.Username" tabindex="2">
               </p></td></tr>
 
-            <tr><td align="left"><p>Password</p></td>
-              <td align="right"><p><input type="password" id="password" name="password"  placeholder="enter your password" ng-model="form.Info.Password">
+            <tr><td align="left"><p>Password:</p></td>
+              <td align="right"><p><input type="password" id="password" name="password"  placeholder="enter your password" ng-model="form.Info.Password" ng-minlength="3" ng-maxlength="10">
               </p></td></tr>
 
-            <tr><td align="left"><p>Re-Password</p></td>
-              <td align="right"><p><input type="password" id="repassword" name="repassword"  placeholder="re-enter your password" ng-model="form.Info.Repassword" tabindex="2">
+            <tr><td align="left"><p>Re-Password:</p></td>
+              <td align="right"><p><input type="password" id="repassword" name="repassword"  placeholder="re-enter your password" ng-model="form.Info.Repassword" tabindex="2" ng-minlength="3" ng-maxlength="10">
               </p></td></tr>
 
-            <tr><td align="left"><p>Site</p></td>
+            <tr><td align="left"><p>Site:</p></td>
               <td align="right"><p><input id="site" name="site" placeholder="enter your site" required="" ng-model="formInfo.Site" tabindex="2" required>
               </p></td></tr>
 
@@ -82,8 +82,8 @@
                 <option value="option-3">Employee</option>
               </select><br></p></td></tr>
 
-            <tr><td><a href="index.html"><p><u>Cancel</u></p></a></td><td align="right"><p><td><p> <buttom type="submit" class="btn btn-success">Sign Up</buttom>
-            </p></td></p></td></tr>
+            <tr><td align="left"><a href="index.html"><p><u>Cancel</u></p></a></td><td align="center"><p><button type="submit" class="btn btn-success">Sign Up</button>
+            </p></td></tr>
         </table>
       </div>
 
