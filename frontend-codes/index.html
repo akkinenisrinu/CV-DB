@@ -54,29 +54,30 @@
 			<br>
 				<table align="center">
 				<form ng-app="myApp" align="center" ng-controller="validateCtrl" 
-				name="myForm" novalidate action="userpage.html">
+				name="myForm" novalidate action="userpage.html" method="">
 
-				<tr><td align="left"><p>Email:</p></td>
-				<td><p><input type="email" name="email" placeholder="Email address" ng-model="email" required>
-				<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
-				<span ng-show="myForm.email.$error.required">Email is required.</span>
+				<tr><td align="left" width="40%"><p>Email:</p></td>
+				<td align="center"><p><input type="email" name="email" placeholder="Email address" ng-model="email" required>
+				<!--<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+				<<span ng-show="myForm.email.$error.required">Email is required.</span>
 				<span ng-show="myForm.email.$error.email">Invalid email address.</span>
-				</span>
+				</span> -->
 				</p></td></tr>
 				
 				<tr><td><br></td></tr>
 				
 				<tr><td align="left"><p>Password:</p></td>
-				<td><p><input type="password" name="password" placeholder="Password" ng-model="password" required />
-				<span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+				<td align="center"><p><input type="password" name="password" placeholder="Password" ng-model="password" required />
+				<!--<span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
 				<span ng-show="myForm.password.$error.required">Password is required.</span>
 				<span ng-show="myForm.password.$error.password">Invalid password.</span>
+				</span> -->
 				</p></td></tr>
 				
 				<tr><td><br></td></tr>
 				
 				<tr><td align="left"><p>Designation:</p></td>
-				<td  align="left"><p><select name="Select" ng-model="data.Select">
+				<td  align="center"><p><select name="Select" ng-model="data.Select">
 						<option value="option-1">Site Manager</option>
 						<option value="option-2">Line Manager</option>
 						<option value="option-3">Employee</option>
@@ -88,20 +89,20 @@
 				<td><p>
 				<input type="submit"
 				ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
-				myForm.email.$dirty && myForm.email.$invalid">
+				myForm.email.$dirty && myForm.email.$invalid" color="green">
 				</p></td></tr>
 				</form>
 				</table>
 				
 		</div>
-				<script>
+				<!-- <script>
 				var app = angular.module('myApp', []);
 				app.controller('validateCtrl', function($scope) {
 					$scope.email = 'sukeshtedla@gmail.com';
 					$scope.password = 'sukeshraghav';
 					$scope.Select = ;
 				});
-				</script>
+				</script> -->
 				
 		  
 
