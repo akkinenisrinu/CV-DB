@@ -49,25 +49,26 @@
           <a href="#" class="btn btn-lg btn-default">Learn more</a>
         </p>
       </div> -->
+	  <br><br>
       <div class="jumbotron">
         <h2>Registraion Page</h2>
         <br>
         <table align="center">
           <form ng-app="myApp" align="center" ng-controller="validateCtrl"
                 name="myForm" novalidate>
-            <tr><td align="left" width="40%"><p>Username:</p></td>
-              <td align="right"><p><input id="name" name="name" placeholder="enter your name" required="" ng-model="formInfo.Name"  required>
+            <tr><td align="left" width="45%"><p>Full Name:</p></td>
+              <td align="right"><p><input id="name" name="fullname" placeholder="enter your name" required="" ng-model="formInfo.Name"  required>
               </p></td></tr>
 
-            <tr><td align="left" width="30%"><p>Email:</p></td>
-              <td align="right"><p><input id="username" name="username" placeholder="enter your username" ng-model="form.Info.Username" tabindex="2">
+            <tr><td align="left" width="45%"><p>E-mail:</p></td>
+              <td align="right"><p><input id="username" name="username" placeholder="enter your E-mail" ng-model="form.Info.Username" tabindex="2">
               </p></td></tr>
 
             <tr><td align="left"><p>Password:</p></td>
               <td align="right"><p><input type="password" id="password" name="password"  placeholder="enter your password" ng-model="form.Info.Password" ng-minlength="3" ng-maxlength="10">
               </p></td></tr>
 
-            <tr><td align="left"><p>Re-Password:</p></td>
+            <tr><td align="left"><p>Confirm Password:</p></td>
               <td align="right"><p><input type="password" id="repassword" name="repassword"  placeholder="re-enter your password" ng-model="form.Info.Repassword" tabindex="2" ng-minlength="3" ng-maxlength="10">
               </p></td></tr>
 
@@ -91,7 +92,7 @@
 
     <div class="mastfoot">
       <div class="inner">
-        <p>&copy;all rights reserved to Team-1</p>
+        
       </div>
     </div>
 
