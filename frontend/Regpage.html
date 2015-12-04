@@ -1,0 +1,116 @@
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="Team-1" content="">
+  <meta name="Srinu" content="">
+
+  <title>Project-Skills DB</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/cover.css" rel="stylesheet">
+  <link href="css/coverpage.css" rel="stylesheet">
+
+
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="js/user.js"></script>
+<body>
+
+<div class="site-wrapper">
+
+  <div class="site-wrapper-inner">
+
+    <div class="cover-container">
+
+      <div class="masthead clearfix">
+        <div class="inner">
+          <img src="images/soft-house.jpg" class="masthead-img" style="width:190px;height:100px;">
+          <h3 class="masthead-brand">Project Skills DB</h3>
+          <!--<nav>
+            <ul class="nav masthead-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav> -->
+        </div>
+      </div>
+
+      <!--<div class="inner cover">
+        <h1 class="cover-heading">Cover your page.</h1>
+        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+        <p class="lead">
+          <a href="#" class="btn btn-lg btn-default">Learn more</a>
+        </p>
+      </div> -->
+	  <br><br>
+      <div class="jumbotron" ng-controller="userCtrl">
+        <h2>Registraion Page</h2>
+        <br>
+        <table align="center">
+          <form align="center"  novalidate>
+            <tr><td align="left" width="45%"><p>First Name:</p></td>
+              <td align="right"><p><input type="text" placeholder="enter your first name" ng-model="user.firstName"  required>
+              </p></td>
+              <tr><td align="left" width="45%"><p>last Name:</p></td>
+                  <td align="right"><p><input type="text" placeholder="enter your last name" ng-model="user.lastName"  required>
+                  </p></td>
+            <tr><td align="left" width="45%"><p>E-mail:</p></td>
+              <td align="right"><p><input type="text" placeholder="enter your E-mail" ng-model="user.email" tabindex="2" required>
+              </p></td></tr>
+
+            <tr><td align="left"><p>Password:</p></td>
+              <td align="right"><p><input type="password" placeholder="enter your password" ng-model="user.password" ng-minlength="3" ng-maxlength="10" required>
+              </p></td></tr>
+
+            <tr><td align="left"><p>Confirm Password:</p></td>
+              <td align="right"><p><input type="password" placeholder="re-enter your password" ng-model="user.confirmPassword" tabindex="2" ng-minlength="3" ng-maxlength="10" required>
+              </p></td></tr>
+
+            <tr><td align="left"><p>Site:</p></td>
+              <td align="right"><p><input placeholder="enter your site" ng-model="user.site" tabindex="2" required>
+              </p></td></tr>
+
+            <tr><td align="left"><p>Designation:</p></td>
+              <td  align="left"><p><select ng-model="user.designation">
+                <option value="Site Manager">Site Manager</option>
+                <option value="Line Manager">Line Manager</option>
+                <option value="Employee">Employee</option>
+              </select><br></p></td></tr>
+
+            <tr><td align="left"><a href="index.html"><p><u>Cancel</u></p></a></td><td><a class="btn btn-success pull-right" ng-click="addUser(user);">Sign Up</a></td></tr>
+            </form>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="mastfoot">
+      <div class="inner">
+        
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
