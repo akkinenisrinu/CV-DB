@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {height: 450px}
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            background-color: darkgrey;
+            height: 600px;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+            .row.content {height:auto;}
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+
+            </button>
+            <a class="navbar-brand" href="#">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="Login.html">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+        </div>
+        <div class="col-sm-8 text-left">
+            <h2> Welcome to login page</h2>
+            <table align="center">
+                <form ng-app="myApp" align="center" ng-controller="validateCtrl"
+                      name="myForm" novalidate action="userpage.html" method="post">
+
+                    <tr><td align="left" width="20%"><p>Email:</p></td>
+                        <td align="right"><p><input type="email" name="email" placeholder="Email address" ng-model="email" required/>
+                            <!--<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                            <<span ng-show="myForm.email.$error.required">Email is required.</span>
+                            <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+                            </span> -->
+                        </p></td></tr>
+
+                    <tr><td><br></td></tr>
+
+                    <tr><td align="left"><p>Password:</p></td>
+                        <td align="right"><p><input type="password" name="password" placeholder="Password" ng-model="password" required/>
+                            <!--<span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+                            <span ng-show="myForm.password.$error.required">Password is required.</span>
+                            <span ng-show="myForm.password.$error.password">Invalid password.</span>
+                            </span> -->
+                        </p></td></tr>
+
+                    <tr><td><br></td></tr>
+
+                    <tr><td align="left"><p>Designation:</p></td>
+                        <td  align="right"><p><select name="Select" ng-model="data.Select">
+                            <option value="option-1">Site Manager</option>
+                            <option value="option-2">Line Manager</option>
+                            <option value="option-3">Employee</option>
+                        </select><br></p></td></tr>
+
+                    <tr><td><br></td></tr>
+
+                    <tr><td align="left" width="60%"><a href="registration.html"><p><u>Register Here</u></p></a></td>
+                        <td><p>
+                            <button type="submit" class="btn btn-success">Sign In</button></p></td></tr>
+                </form>
+            </table>
+        </div>
+        <div class="col-sm-2 sidenav">
+        </div>
+    </div>
+</div>
+<script src="registration.js"></script>
+<footer class="container-fluid text-center">
+    <p>@All Rights are recieved by Team-1</p>
+</footer>
+
+</body>
+</html>
