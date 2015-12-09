@@ -1,6 +1,14 @@
 package se.team1.cvdb.solution;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.sql.*;
+
+import javax.imageio.ImageIO;
 
 public class SqlH2 {
 	
@@ -9,18 +17,21 @@ public class SqlH2 {
 	static final String DB_URL = "jdbc:h2:~/test";
 
 	// Database credentials
-	static final String USER = "grkt";
-	static final String PASS = "kamal29";
-
+	static final String USER = "jsp99";
+	static final String PASS = "vinnova";
+	
+	// To read the image Blob from the database
+	// ResultSet.getBinaryStream
+	
 	Connection conn = null;
 	Statement stmt = null;
 	
 	public void initializeConnections() {
 		try {
-			// STEP 2: Register JDBC driver
+			// STEP 1: Register JDBC driver
 			Class.forName("org.h2.Driver");
 
-			// STEP 3: Open a connection
+			// STEP 2: Open a connection
 			System.out.println("Connecting to a selected database...");
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 			System.out.println("Connected database successfully...");
@@ -64,6 +75,7 @@ public class SqlH2 {
 					+ "confirmPassword VARCHAR(255) NOT NULL,"
 					+ "site VARCHAR(255) NOT NULL,"
 					+ "designation VARCHAR(255) NOT NULL,"
+					+ "image BLOB,"
 					+ "PRIMARY KEY (id)) AUTO_INCREMENT=1";
 			stmt.executeUpdate(sql);
 			System.out.println("Created table in given database...");
@@ -76,24 +88,32 @@ public class SqlH2 {
 	public void insertRow(User user) {
 		
 		  try {
-	          //STEP 4: Execute a query
+	          // Execute a query
 	          System.out.println("Inserting records into the table...");
-	          stmt = conn.createStatement();
 
-	          String sql = "INSERT INTO CV_DB "
-	          		+ "(firstName,lastName,email,password,confirmPassword,site,designation)"
-	          		+ "VALUES (" + "'" + user.getFirstName() +"'"
-	          		+ ", " + "'" + user.getLastName() + "'"
-	          		+ ", " + "'" + user.getEmail() + "'"
-	          		+ ", " + "'" + user.getPassword() + "'"
-	          		+ ", " + "'" + user.getConfirmPassword() + "'"
-	          		+ ", " + "'" + user.getSite() + "'"
-	          		+ ", " + "'" + user.getDesignation() + "'"
-	          		+ ")";
+	      	// Convert the contents of the Image file to appropriate 'format'
+	      	BufferedImage bImage = null;
+	      	try {
+	      	    bImage = ImageIO.read(new URL("file:///B:/VINNOVA/CV-DB/backend/src/main/java/se/team1/cvdb/solution/file.jpg"));
+	      	} catch (IOException e) {
+	      		System.out.println(e);
+	      	}
+	      	ByteArrayOutputStream baos = new ByteArrayOutputStream();
+	      	ImageIO.write(bImage, "png", baos);
+	      	InputStream inStream = new ByteArrayInputStream(baos.toByteArray());
+	      	
+	      	PreparedStatement newUser = conn.prepareStatement ("INSERT INTO CV_DB (firstName, lastName, email, password, confirmPassword, site, designation, image) values(?,?,?,?,?,?,?,?)");	
+	    	newUser.setString(1, user.getFirstName());
+	    	newUser.setString(2, user.getLastName());
+	    	newUser.setString(3, user.getEmail());
+	    	newUser.setString(4, user.getPassword());
+	    	newUser.setString(5, user.getConfirmPassword());
+	    	newUser.setString(6, user.getSite());
+	    	newUser.setString(7, user.getDesignation());
+	    	newUser.setBinaryStream(8, inStream);
+	    	newUser.executeUpdate();
 
-	          stmt.executeUpdate(sql);
-
-	          System.out.println("Inserted records into the table...");
+	       System.out.println("Inserted records into the table...");
 
 	      } catch (SQLException se) {
 	          //Handle errors for JDBC
