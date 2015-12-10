@@ -17,8 +17,8 @@ public class SqlH2 {
 	static final String DB_URL = "jdbc:h2:~/test";
 
 	// Database credentials
-	static final String USER = "jsp99";
-	static final String PASS = "vinnova";
+	static final String USER = "grkt";
+	static final String PASS = "kamal29";
 	
 	// To read the image Blob from the database
 	// ResultSet.getBinaryStream
@@ -94,7 +94,7 @@ public class SqlH2 {
 	      	// Convert the contents of the Image file to appropriate 'format'
 	      	BufferedImage bImage = null;
 	      	try {
-	      	    bImage = ImageIO.read(new URL("file:///B:/VINNOVA/CV-DB/backend/src/main/java/se/team1/cvdb/solution/file.jpg"));
+	      	    bImage = ImageIO.read(new URL("file:///home/sh/Desktop/workspace/workspace-main/CV-DB/backend/src/main/java/se/team1/cvdb/solution/file.jpg"));
 	      	} catch (IOException e) {
 	      		System.out.println(e);
 	      	}
@@ -123,4 +123,22 @@ public class SqlH2 {
 	          e.printStackTrace();
 	      }
 	}
+	
+	public User fetchDetails(User user) throws Exception{
+		
+		stmt = conn.createStatement();
+		String sql = "SELECT * FROM CV_DB WHERE email="
+				+ "'" + user.getEmail() + "' and password="
+				+ "'" + user.getPassword() + "' and designation="
+				+ "'" + user.getDesignation() + "'";
+		ResultSet rs;
+		rs = stmt.executeQuery(sql);
+		User objU = new User();
+        while (rs.next()) {
+            objU.setEmail(rs.getString("email"));
+            objU.setPassword(rs.getString("password"));;
+            objU.setDesignation(rs.getString("designation"));
+        }
+        return objU;
+}
 }
